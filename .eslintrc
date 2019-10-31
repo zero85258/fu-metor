@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:meteor/recommended",
+    "eslint:recommended"
+  ],
+  "rules": {
+    "import/no-unresolved": [
+      2, { "ignore": ["^meteor/"] }
+    ],
+    // add some message to meteor global variable
+    "no-restricted-globals": [
+      "error", {
+        "name": "Meteor",
+        "message": "import { Meteor } from 'meteor/meteor' instead"
+      },
+      {
+        "name": "_",
+        "message": "do not use the global variable _"
+      }
+    ]
+  },
+}
